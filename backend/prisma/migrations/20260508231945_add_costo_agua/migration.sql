@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "LecturaAgua" ADD COLUMN     "costoTotal" DOUBLE PRECISION,
+ALTER COLUMN "lecturaAnterior" DROP NOT NULL,
+ALTER COLUMN "lecturaActual" DROP NOT NULL,
+ALTER COLUMN "m3" DROP NOT NULL;

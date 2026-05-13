@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "LecturaLuz" ADD COLUMN     "costoAfecto" DOUBLE PRECISION,
+ADD COLUMN     "costoExento" DOUBLE PRECISION,
+ALTER COLUMN "lecturaAnterior" SET DEFAULT 0,
+ALTER COLUMN "lecturaActual" SET DEFAULT 0,
+ALTER COLUMN "kwh" SET DEFAULT 0;
