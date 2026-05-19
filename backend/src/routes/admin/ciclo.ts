@@ -1,5 +1,6 @@
 import { Router, Response } from "express";
 import { addDays, format } from "date-fns";
+import fs from "fs";
 import { prisma } from "../../lib/prisma.js";
 import { calcularFactura } from "../../services/calculadora.js";
 import { generarPdfFactura } from "../../services/pdf.js";
@@ -226,7 +227,7 @@ router.post("/:mes/enviar", async (req: AuthRequest, res: Response): Promise<voi
     try {
       const pdfPath = path.join(storageDir, "pdfs", `${factura.id}.pdf`);
 
-      if (!require("fs").existsSync(pdfPath)) {
+      if (!fs.existsSync(pdfPath)) {
         await generarPdfFactura({
           folio: factura.folio ?? factura.id.slice(-8).toUpperCase(),
           mes,
