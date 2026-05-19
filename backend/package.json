@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy",
     "dev": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "prisma migrate deploy && node dist/index.js",
